@@ -1,34 +1,27 @@
-import { LangProvider, useLang } from "@/components/LanguageContext";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import BookingBar from "@/components/BookingBar";
-import PropertiesSection from "@/components/PropertiesSection";
-import AboutSection from "@/components/AboutSection";
-import ExperiencesSection from "@/components/ExperiencesSection";
+import PropertiesPreview from "@/components/PropertiesPreview";
+import AboutPreview from "@/components/AboutPreview";
+import TestimonialParallax from "@/components/TestimonialParallax";
+import ParallaxGallery from "@/components/ParallaxGallery";
+import ExperiencesBanner from "@/components/ExperiencesBanner";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 
-const PageContent = () => {
-  const { lang, setLang } = useLang();
-
-  return (
-    <div className="min-h-screen">
-      <Navbar currentLang={lang} onLangChange={setLang} />
-      <HeroSection />
-      <BookingBar />
-      <PropertiesSection />
-      <AboutSection />
-      <ExperiencesSection />
-      <Footer />
-      <WhatsAppButton />
-    </div>
-  );
-};
-
 const Index = () => (
-  <LangProvider>
-    <PageContent />
-  </LangProvider>
+  <div className="min-h-screen">
+    <Navbar />
+    <HeroSection />
+    <BookingBar />
+    <PropertiesPreview />
+    <AboutPreview />
+    <TestimonialParallax />
+    <ExperiencesBanner />
+    <ParallaxGallery />
+    <Footer />
+    <WhatsAppButton />
+  </div>
 );
 
 export default Index;
