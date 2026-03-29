@@ -25,6 +25,7 @@ export default {
         foreground: "hsl(var(--foreground))",
         heading: "hsl(var(--heading))",
         whatsapp: "hsl(var(--whatsapp))",
+        gold: "hsl(var(--gold))",
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",

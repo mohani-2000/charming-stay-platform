@@ -23,9 +23,9 @@ const BookingBar = () => {
   };
 
   return (
-    <section className="relative z-20 -mt-20">
-      <div className="container mx-auto px-6">
-        <div className="bg-card border border-border p-6 md:p-8 flex flex-col md:flex-row gap-4 md:gap-6 items-end">
+    <section className="relative z-20 -mt-16">
+      <div className="container mx-auto px-6 lg:px-12">
+        <div className="bg-background border border-border shadow-xl p-6 md:p-8 flex flex-col md:flex-row gap-4 md:gap-6 items-end">
           <div className="flex-1 w-full">
             <label className="font-body text-[10px] tracking-[0.25em] uppercase text-muted-foreground mb-2 block">
               Check-in
@@ -90,7 +90,7 @@ const BookingBar = () => {
           </div>
           <button
             onClick={handleBook}
-            className="w-full md:w-auto bg-primary text-primary-foreground font-body text-xs tracking-[0.25em] uppercase px-10 py-4 hover:opacity-90 transition-opacity"
+            className="w-full md:w-auto bg-primary text-primary-foreground font-body text-[10px] tracking-[0.25em] uppercase px-12 py-4 hover:opacity-90 transition-all duration-300"
           >
             Book Now
           </button>
