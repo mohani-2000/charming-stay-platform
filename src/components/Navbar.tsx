@@ -1,11 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Globe } from "lucide-react";
+import { useLang } from "@/components/LanguageContext";
 import amaniLogo from "@/assets/amani-logo.png";
-
-interface NavbarProps {
-  currentLang: string;
-  onLangChange: (lang: string) => void;
-}
 
 const LANGUAGES = [
   { code: "en", label: "English" },
@@ -16,63 +13,81 @@ const LANGUAGES = [
 ];
 
 const NAV_LINKS = [
-  { href: "#home", label: "Home" },
-  { href: "#properties", label: "Properties" },
-  { href: "#about", label: "About" },
-  { href: "#experiences", label: "Experiences" },
-  { href: "#contact", label: "Contact" },
+  { href: "/", label: "Home" },
+  { href: "/properties", label: "Properties" },
+  { href: "/about", label: "About" },
+  { href: "/experiences", label: "Experiences" },
+  { href: "/contact", label: "Contact" },
 ];
 
-const Navbar = ({ currentLang, onLangChange }: NavbarProps) => {
+const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const { lang, setLang } = useLang();
+  const location = useLocation();
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 50);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const isHome = location.pathname === "/";
+  const navBg = scrolled || !isHome
+    ? "bg-background/95 backdrop-blur-md shadow-sm"
+    : "bg-transparent";
+
+  const textColor = scrolled || !isHome ? "text-foreground" : "text-primary-foreground";
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border">
-      <div className="container mx-auto flex items-center justify-between py-4 px-6">
-        <a href="#home" className="flex-shrink-0">
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${navBg}`}>
+      <div className="container mx-auto flex items-center justify-between py-5 px-6 lg:px-12">
+        <Link to="/" className="flex-shrink-0">
           <img src={amaniLogo} alt="Amani Collection" className="h-12 w-auto" />
-        </a>
+        </Link>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden lg:flex items-center gap-10">
           {NAV_LINKS.map((link) => (
-            <a
+            <Link
               key={link.href}
-              href={link.href}
-              className="font-body text-sm tracking-[0.2em] uppercase text-foreground hover:text-primary transition-colors"
+              to={link.href}
+              className={`story-link font-body text-[11px] tracking-[0.25em] uppercase transition-colors duration-300 ${
+                location.pathname === link.href
+                  ? "text-primary"
+                  : `${textColor} hover:text-primary`
+              }`}
             >
               {link.label}
-            </a>
+            </Link>
           ))}
 
           {/* Language Selector */}
           <div className="relative">
             <button
               onClick={() => setLangOpen(!langOpen)}
-              className="flex items-center gap-1 text-foreground hover:text-primary transition-colors"
+              className={`flex items-center gap-2 ${textColor} hover:text-primary transition-colors`}
             >
               <Globe className="w-4 h-4" />
-              <span className="text-xs uppercase tracking-wider">
-                {currentLang}
+              <span className="text-[10px] uppercase tracking-[0.2em] font-body">
+                {lang}
               </span>
             </button>
             {langOpen && (
-              <div className="absolute right-0 top-full mt-2 bg-card border border-border py-2 min-w-[140px]">
-                {LANGUAGES.map((lang) => (
+              <div className="absolute right-0 top-full mt-3 bg-background border border-border py-2 min-w-[150px] shadow-lg">
+                {LANGUAGES.map((l) => (
                   <button
-                    key={lang.code}
+                    key={l.code}
                     onClick={() => {
-                      onLangChange(lang.code);
+                      setLang(l.code);
                       setLangOpen(false);
                     }}
-                    className={`block w-full text-left px-4 py-2 text-sm hover:bg-secondary transition-colors ${
-                      currentLang === lang.code
-                        ? "text-primary"
-                        : "text-foreground"
+                    className={`block w-full text-left px-5 py-2.5 text-sm font-body hover:bg-secondary transition-colors ${
+                      lang === l.code ? "text-primary" : "text-foreground"
                     }`}
                   >
-                    {lang.label}
+                    {l.label}
                   </button>
                 ))}
               </div>
@@ -82,7 +97,7 @@ const Navbar = ({ currentLang, onLangChange }: NavbarProps) => {
 
         {/* Mobile toggle */}
         <button
-          className="md:hidden text-foreground"
+          className={`lg:hidden ${textColor}`}
           onClick={() => setMobileOpen(!mobileOpen)}
         >
           {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -91,33 +106,35 @@ const Navbar = ({ currentLang, onLangChange }: NavbarProps) => {
 
       {/* Mobile Menu */}
       {mobileOpen && (
-        <div className="md:hidden bg-background border-t border-border animate-fade-in">
-          <div className="flex flex-col py-4 px-6 gap-4">
+        <div className="lg:hidden bg-background border-t border-border animate-fade-in">
+          <div className="flex flex-col py-6 px-6 gap-5">
             {NAV_LINKS.map((link) => (
-              <a
+              <Link
                 key={link.href}
-                href={link.href}
+                to={link.href}
                 onClick={() => setMobileOpen(false)}
-                className="font-body text-sm tracking-[0.2em] uppercase text-foreground hover:text-primary transition-colors"
+                className={`font-body text-sm tracking-[0.2em] uppercase transition-colors ${
+                  location.pathname === link.href ? "text-primary" : "text-foreground hover:text-primary"
+                }`}
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
             <div className="border-t border-border pt-4 flex flex-wrap gap-3">
-              {LANGUAGES.map((lang) => (
+              {LANGUAGES.map((l) => (
                 <button
-                  key={lang.code}
+                  key={l.code}
                   onClick={() => {
-                    onLangChange(lang.code);
+                    setLang(l.code);
                     setMobileOpen(false);
                   }}
-                  className={`text-xs uppercase tracking-wider px-3 py-1 border border-border ${
-                    currentLang === lang.code
+                  className={`text-xs uppercase tracking-wider px-3 py-1.5 border ${
+                    lang === l.code
                       ? "text-primary border-primary"
-                      : "text-muted-foreground"
+                      : "text-muted-foreground border-border"
                   }`}
                 >
-                  {lang.label}
+                  {l.label}
                 </button>
               ))}
             </div>
