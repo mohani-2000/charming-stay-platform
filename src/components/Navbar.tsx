@@ -35,10 +35,10 @@ const Navbar = () => {
 
   const isHome = location.pathname === "/";
   const navBg = scrolled || !isHome
-    ? "bg-background/95 backdrop-blur-md shadow-sm"
+    ? "bg-dark-section backdrop-blur-md shadow-sm"
     : "bg-transparent";
 
-  const textColor = scrolled || !isHome ? "text-foreground" : "text-primary-foreground";
+  const textColor = scrolled || !isHome ? "text-gold-light" : "text-primary-foreground";
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${navBg}`}>
@@ -55,8 +55,8 @@ const Navbar = () => {
               to={link.href}
               className={`story-link font-body text-[11px] tracking-[0.25em] uppercase transition-colors duration-300 ${
                 location.pathname === link.href
-                  ? "text-primary"
-                  : `${textColor} hover:text-primary`
+                  ? "text-gold"
+                  : `${textColor} hover:text-gold`
               }`}
             >
               {link.label}
@@ -106,7 +106,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {mobileOpen && (
-        <div className="lg:hidden bg-background border-t border-border animate-fade-in">
+        <div className="lg:hidden bg-dark-section border-t border-gold/20 animate-fade-in">
           <div className="flex flex-col py-6 px-6 gap-5">
             {NAV_LINKS.map((link) => (
               <Link
@@ -114,7 +114,7 @@ const Navbar = () => {
                 to={link.href}
                 onClick={() => setMobileOpen(false)}
                 className={`font-body text-sm tracking-[0.2em] uppercase transition-colors ${
-                  location.pathname === link.href ? "text-primary" : "text-foreground hover:text-primary"
+                  location.pathname === link.href ? "text-gold" : "text-gold-light hover:text-gold"
                 }`}
               >
                 {link.label}
