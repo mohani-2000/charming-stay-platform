@@ -10,7 +10,7 @@ const Footer = () => {
           {/* Brand */}
           <div className="md:col-span-1">
             <img src={amaniLogo} alt="Amani Collection" className="h-14 w-auto mb-6" />
-            <p className="text-dark-section-foreground/60 font-body text-xs leading-relaxed">
+            <p className="text-white/70 font-body text-xs leading-relaxed">
               Restaurants, Hotels, Camps & Lodges across Tanzania's most spectacular destinations.
             </p>
           </div>
@@ -21,7 +21,7 @@ const Footer = () => {
             <ul className="space-y-2.5">
               {["Arusha", "Tarangire", "Ngorongoro", "Serengeti", "Zanzibar"].map((d) => (
                 <li key={d}>
-                  <Link to="/properties" className="text-dark-section-foreground/60 font-body text-xs hover:text-gold transition-colors">
+                  <Link to="/properties" className="text-white/80 font-body text-xs hover:text-gold transition-colors">
                     {d}
                   </Link>
                 </li>
@@ -40,7 +40,7 @@ const Footer = () => {
                 { label: "Contact", href: "/contact" },
               ].map((link) => (
                 <li key={link.label}>
-                  <Link to={link.href} className="text-dark-section-foreground/60 font-body text-xs hover:text-gold transition-colors">
+                  <Link to={link.href} className="text-white/80 font-body text-xs hover:text-gold transition-colors">
                     {link.label}
                   </Link>
                 </li>
@@ -52,15 +52,15 @@ const Footer = () => {
           <div>
             <h5 className="font-heading text-lg mb-5 text-gold-light">Contact Us</h5>
             <ul className="space-y-3">
-              <li className="flex items-center gap-3 text-dark-section-foreground/60">
+              <li className="flex items-center gap-3 text-white/80">
                 <Phone className="w-4 h-4 text-gold flex-shrink-0" />
                 <span className="font-body text-xs">+255 123 456 789</span>
               </li>
-              <li className="flex items-center gap-3 text-dark-section-foreground/60">
+              <li className="flex items-center gap-3 text-white/80">
                 <Mail className="w-4 h-4 text-gold flex-shrink-0" />
                 <span className="font-body text-xs">info@amanisafarilodge.co.tz</span>
               </li>
-              <li className="flex items-start gap-3 text-dark-section-foreground/60">
+              <li className="flex items-start gap-3 text-white/80">
                 <MapPin className="w-4 h-4 text-gold flex-shrink-0 mt-0.5" />
                 <span className="font-body text-xs">Arusha, Tanzania</span>
               </li>
@@ -69,10 +69,10 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-white/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-dark-section-foreground/40 font-body text-xs">
+          <p className="text-white/50 font-body text-xs">
             © 2026 Amani Collection. All rights reserved.
           </p>
-          <p className="text-dark-section-foreground/40 font-body text-xs">
+          <p className="text-white/50 font-body text-xs">
             www.amanisafarilodge.co.tz
           </p>
         </div>
