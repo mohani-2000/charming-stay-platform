@@ -4,7 +4,7 @@ import amaniLogo from "@/assets/amani-logo.png";
 
 const Footer = () => {
   return (
-    <footer className="bg-dark-section border-t border-border py-16 md:py-20">
+    <footer className="bg-dark-section border-t border-gold/20 py-16 md:py-20">
       <div className="container mx-auto px-6 lg:px-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8">
           {/* Brand */}

@@ -55,8 +55,8 @@ const Navbar = () => {
               to={link.href}
               className={`story-link font-body text-[11px] tracking-[0.25em] uppercase transition-colors duration-300 ${
                 location.pathname === link.href
-                  ? "text-primary"
-                  : `${textColor} hover:text-primary`
+                  ? "text-gold"
+                  : `${textColor} hover:text-gold`
               }`}
             >
               {link.label}
