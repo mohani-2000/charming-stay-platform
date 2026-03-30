@@ -21,7 +21,7 @@ const Footer = () => {
             <ul className="space-y-2.5">
               {["Arusha", "Tarangire", "Ngorongoro", "Serengeti", "Zanzibar"].map((d) => (
                 <li key={d}>
-                  <Link to="/properties" className="text-dark-section-foreground/60 font-body text-xs hover:text-gold transition-colors">
+                  <Link to="/properties" className="text-white/80 font-body text-xs hover:text-gold transition-colors">
                     {d}
                   </Link>
                 </li>
