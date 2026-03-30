@@ -10,7 +10,7 @@ const Footer = () => {
           {/* Brand */}
           <div className="md:col-span-1">
             <img src={amaniLogo} alt="Amani Collection" className="h-14 w-auto mb-6" />
-            <p className="text-dark-section-foreground/60 font-body text-xs leading-relaxed">
+            <p className="text-white/70 font-body text-xs leading-relaxed">
               Restaurants, Hotels, Camps & Lodges across Tanzania's most spectacular destinations.
             </p>
           </div>
