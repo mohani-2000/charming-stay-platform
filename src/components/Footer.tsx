@@ -52,15 +52,15 @@ const Footer = () => {
           <div>
             <h5 className="font-heading text-lg mb-5 text-gold-light">Contact Us</h5>
             <ul className="space-y-3">
-              <li className="flex items-center gap-3 text-dark-section-foreground/60">
+              <li className="flex items-center gap-3 text-white/80">
                 <Phone className="w-4 h-4 text-gold flex-shrink-0" />
                 <span className="font-body text-xs">+255 123 456 789</span>
               </li>
-              <li className="flex items-center gap-3 text-dark-section-foreground/60">
+              <li className="flex items-center gap-3 text-white/80">
                 <Mail className="w-4 h-4 text-gold flex-shrink-0" />
                 <span className="font-body text-xs">info@amanisafarilodge.co.tz</span>
               </li>
-              <li className="flex items-start gap-3 text-dark-section-foreground/60">
+              <li className="flex items-start gap-3 text-white/80">
                 <MapPin className="w-4 h-4 text-gold flex-shrink-0 mt-0.5" />
                 <span className="font-body text-xs">Arusha, Tanzania</span>
               </li>
