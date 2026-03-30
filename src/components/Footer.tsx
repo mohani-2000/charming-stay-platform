@@ -69,10 +69,10 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-white/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-dark-section-foreground/40 font-body text-xs">
+          <p className="text-white/50 font-body text-xs">
             © 2026 Amani Collection. All rights reserved.
           </p>
-          <p className="text-dark-section-foreground/40 font-body text-xs">
+          <p className="text-white/50 font-body text-xs">
             www.amanisafarilodge.co.tz
           </p>
         </div>
