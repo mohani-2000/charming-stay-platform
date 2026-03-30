@@ -40,7 +40,7 @@ const Footer = () => {
                 { label: "Contact", href: "/contact" },
               ].map((link) => (
                 <li key={link.label}>
-                  <Link to={link.href} className="text-dark-section-foreground/60 font-body text-xs hover:text-gold transition-colors">
+                  <Link to={link.href} className="text-white/80 font-body text-xs hover:text-gold transition-colors">
                     {link.label}
                   </Link>
                 </li>
