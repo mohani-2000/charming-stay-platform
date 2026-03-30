@@ -35,10 +35,10 @@ const Navbar = () => {
 
   const isHome = location.pathname === "/";
   const navBg = scrolled || !isHome
-    ? "bg-background/95 backdrop-blur-md shadow-sm"
+    ? "bg-dark-section backdrop-blur-md shadow-sm"
     : "bg-transparent";
 
-  const textColor = scrolled || !isHome ? "text-foreground" : "text-primary-foreground";
+  const textColor = scrolled || !isHome ? "text-gold-light" : "text-primary-foreground";
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${navBg}`}>
