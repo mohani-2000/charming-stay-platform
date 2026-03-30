@@ -106,7 +106,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {mobileOpen && (
-        <div className="lg:hidden bg-background border-t border-border animate-fade-in">
+        <div className="lg:hidden bg-dark-section border-t border-gold/20 animate-fade-in">
           <div className="flex flex-col py-6 px-6 gap-5">
             {NAV_LINKS.map((link) => (
               <Link
@@ -114,7 +114,7 @@ const Navbar = () => {
                 to={link.href}
                 onClick={() => setMobileOpen(false)}
                 className={`font-body text-sm tracking-[0.2em] uppercase transition-colors ${
-                  location.pathname === link.href ? "text-primary" : "text-foreground hover:text-primary"
+                  location.pathname === link.href ? "text-gold" : "text-gold-light hover:text-gold"
                 }`}
               >
                 {link.label}
