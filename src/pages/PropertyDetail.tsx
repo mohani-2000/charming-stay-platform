@@ -1,11 +1,12 @@
 import { useParams, Link } from "react-router-dom";
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ArrowLeft, MapPin, Star } from "lucide-react";
+import { ArrowLeft, MapPin, Star, UtensilsCrossed, Home } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
-import { PROPERTIES } from "@/components/PropertiesPreview";
+import RatesTable from "@/components/RatesTable";
+import { PROPERTIES, CHILD_POLICY, ACTIVITIES_EXTRAS, LOBO_ACTIVITIES } from "@/components/PropertiesPreview";
 
 const PropertyDetail = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -32,6 +33,14 @@ const PropertyDetail = () => {
   }
 
   const otherProperties = PROPERTIES.filter((p) => p.slug !== slug).slice(0, 3);
+  const isRestaurant = property.type === "restaurant";
+  const ctaText = isRestaurant ? "Book a Table" : "Enquire Now";
+  const ctaMessage = isRestaurant
+    ? `Hello! I'd like to book a table at ${property.name}.`
+    : `Hello! I'm interested in booking ${property.name}.`;
+
+  // Determine which activities list to use based on property
+  const activities = property.slug === "amani-farmhouse" ? LOBO_ACTIVITIES : ACTIVITIES_EXTRAS;
 
   return (
     <div className="min-h-screen">
@@ -77,7 +86,7 @@ const PropertyDetail = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
               {[
                 { label: "Location", value: property.location },
-                { label: "Experience", value: "Luxury Safari" },
+                { label: "Type", value: isRestaurant ? "Restaurant" : "Lodge & Camp", icon: isRestaurant ? UtensilsCrossed : Home },
                 { label: "Rating", value: "5 Star", icon: Star },
               ].map((item) => (
                 <div key={item.label} className="text-center p-6 bg-card">
@@ -99,7 +108,7 @@ const PropertyDetail = () => {
               transition={{ duration: 0.6 }}
             >
               <h2 className="font-heading text-3xl md:text-4xl font-light mb-6">
-                About This Property
+                About {property.name}
               </h2>
               <div className="separator-line !ml-0 !mb-8" />
               <p className="text-muted-foreground font-body text-sm leading-[2]">
@@ -107,19 +116,32 @@ const PropertyDetail = () => {
               </p>
             </motion.div>
 
+            {/* Rates Table (only for properties with rates) */}
+            {property.rates && (
+              <RatesTable
+                rates={property.rates}
+                activities={activities}
+                childPolicy={CHILD_POLICY}
+              />
+            )}
+
             {/* Booking CTA */}
             <div className="mt-16 p-10 bg-card text-center">
-              <h3 className="font-heading text-2xl md:text-3xl mb-4">Ready to Experience {property.name}?</h3>
+              <h3 className="font-heading text-2xl md:text-3xl mb-4">
+                {isRestaurant ? `Dine at ${property.name}` : `Ready to Experience ${property.name}?`}
+              </h3>
               <p className="text-muted-foreground font-body text-sm mb-8">
-                Contact us to plan your perfect stay.
+                {isRestaurant
+                  ? "Reserve your table for an unforgettable dining experience."
+                  : "Contact us to plan your perfect stay."}
               </p>
               <a
-                href={`https://wa.me/255123456789?text=${encodeURIComponent(`Hello! I'm interested in booking ${property.name}.`)}`}
+                href={`https://wa.me/255742136679?text=${encodeURIComponent(ctaMessage)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block font-body text-[10px] tracking-[0.25em] uppercase bg-primary text-primary-foreground px-12 py-4 hover:opacity-90 transition-opacity"
               >
-                Enquire Now
+                {ctaText}
               </a>
             </div>
           </div>

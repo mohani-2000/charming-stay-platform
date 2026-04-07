@@ -1,26 +1,26 @@
-import { Compass, Utensils, Shield, Heart } from "lucide-react";
+import { Binoculars, CalendarCheck, Bed, ShieldCheck } from "lucide-react";
 import { motion } from "framer-motion";
 
 const FEATURES = [
   {
-    icon: Compass,
-    title: "Safari Adventures",
-    description: "Expert-guided game drives across Tanzania's most iconic national parks and conservation areas.",
+    icon: Binoculars,
+    title: "Expert Safari Guides",
+    description: "Travel with highly experienced local guides who ensure safe journeys, deep wildlife knowledge, and unforgettable game-drive experiences.",
   },
   {
-    icon: Utensils,
-    title: "Fine Dining",
-    description: "Farm-to-table cuisine blending local Tanzanian flavors with international culinary excellence.",
+    icon: CalendarCheck,
+    title: "Custom Travel Planning",
+    description: "Every itinerary is thoughtfully designed to match your travel style, pace, and interests for a truly personalized African experience.",
   },
   {
-    icon: Shield,
-    title: "Conservation",
-    description: "Committed to preserving Tanzania's wildlife and supporting local communities through sustainable tourism.",
+    icon: Bed,
+    title: "Luxury & Comfort Stays",
+    description: "Handpicked lodges and camps offering comfort, stunning locations, and authentic African hospitality throughout your journey.",
   },
   {
-    icon: Heart,
-    title: "Personalized Service",
-    description: "Every detail curated to create unforgettable moments. Your journey, your way.",
+    icon: ShieldCheck,
+    title: "Safe & Responsible Travel",
+    description: "We follow responsible tourism practices and prioritize guest safety while respecting wildlife, local communities, and natural environments.",
   },
 ];
 
@@ -30,7 +30,7 @@ const AboutPreview = () => {
       <div className="container mx-auto px-6 lg:px-12">
         <div className="max-w-3xl mx-auto text-center mb-20">
           <p className="font-body text-[10px] tracking-[0.4em] uppercase text-primary mb-4">
-            About Us
+            Why Choose Us
           </p>
           <h2 className="font-heading text-4xl md:text-6xl font-light mb-8">
             The Amani Collection

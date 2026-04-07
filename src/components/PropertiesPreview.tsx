@@ -7,68 +7,135 @@ import propertyCottages from "@/assets/property-cottages.jpg";
 import propertyLobo from "@/assets/property-lobo.jpg";
 import propertyManyara from "@/assets/property-manyara.jpg";
 
+export type PropertyType = "lodge" | "restaurant";
+
 export const PROPERTIES = [
   {
-    slug: "silale-tarangire",
-    name: "The Silale Tarangire Park",
-    location: "Tarangire",
+    slug: "amani-safari-lodge",
+    name: "Amani Safari Lodge",
+    location: "Arusha",
+    type: "lodge" as PropertyType,
     description:
-      "Perched on the Great Rift Valley escarpment, enjoy breathtaking lake views and diverse ecosystems from forest to flamingo-filled shores, all within intimate proximity.",
+      "Peaceful, green, and close to all major parks in northern Tanzania. Nestled within Mringa Coffee Estate, Arusha.",
     image: propertySilale,
+    linkText: "Inquiry Room",
     longDescription:
-      "Nestled along the edge of the Great Rift Valley, The Silale Tarangire Park offers an unrivaled vantage point over one of Africa's most dramatic landscapes. Wake to panoramic lake views stretching to the horizon, where thousands of flamingos paint the shores pink. Our intimate lodge features handcrafted suites that blend seamlessly with the natural environment, each offering private viewing decks and plunge pools. Guided walking safaris through ancient baobab forests and night game drives reveal the park's incredible biodiversity.",
+      "Amani Safari Lodge is a tranquil retreat nestled within the lush Mringa Coffee Estate in Arusha. Surrounded by verdant gardens and towering shade trees, the lodge offers a peaceful base from which to explore Tanzania's renowned northern safari circuit. Each room is thoughtfully appointed with locally crafted furnishings and opens onto private verandas overlooking manicured grounds. Guests enjoy farm-fresh cuisine at the on-site restaurant, rejuvenating spa treatments, and easy access to Tarangire, Lake Manyara, Ngorongoro, and the Serengeti.",
+    rates: {
+      title: "Amani Safari Lodge",
+      fullBoard: {
+        peak: { single: 1135, double: 756, triple: 1703, family: 756 },
+        high: { single: 848, double: 565, triple: 1272, family: 565 },
+        low: { single: 613, double: 408, triple: 919, family: 408 },
+      },
+      safariPackage: {
+        peak: { single: 1345, double: 966, triple: 2175, family: 966 },
+        high: { single: 1058, double: 775, triple: 1745, family: 775 },
+        low: { single: 823, double: 618, triple: 1392, family: 618 },
+      },
+    },
   },
   {
-    slug: "olduvai-ngorongoro",
-    name: "Olduvai Ngorongoro",
+    slug: "amani-eserian-ngorongoro",
+    name: "Amani Eserian Ngorongoro",
     location: "Ngorongoro",
+    type: "lodge" as PropertyType,
     description:
-      "Experience luxury amidst rolling greens and wildlife. Our Golf Cottages blend championship golf access with intimate wilderness encounters.",
+      "A calm, scenic stay in the Ngorongoro Conservation Area with views you'll never forget.",
     image: propertyOlduvai,
+    linkText: "Inquiry Room",
     longDescription:
-      "Set against the backdrop of the Ngorongoro Highlands, Olduvai offers a unique fusion of world-class golf and authentic African safari. Our cottages are thoughtfully positioned along the fairways, where wildlife roams freely between holes. Each morning begins with mist rolling over the crater rim, and each evening ends with sundowners overlooking the vast caldera. The property features a spa, farm-to-table restaurant, and dedicated safari guides.",
+      "Perched on the rim of the magnificent Ngorongoro Crater, Amani Eserian offers an unparalleled blend of luxury and raw natural beauty. Each suite commands sweeping views across the crater floor — home to over 25,000 large animals including the Big Five. The lodge's architecture draws inspiration from traditional Maasai boma design, using local stone and reclaimed timber. Guests enjoy guided crater descents, cultural visits to nearby Maasai villages, and evenings around the fire pit beneath the Milky Way.",
   },
   {
-    slug: "ngome-house",
-    name: "The Ngome House",
-    location: "Serengeti",
+    slug: "amani-farmhouse",
+    name: "Amani Farmhouse",
+    location: "Arusha",
+    type: "lodge" as PropertyType,
     description:
-      "Immerse yourself in the world's most famous wildlife ecosystem. Year-round game viewing and front-row access to the Great Migration.",
+      "A quiet home in the countryside where you can relax and feel cared for. Located in the Kili Golf and Wildlife Estate, Arusha.",
     image: propertyNgome,
+    linkText: "Inquiry Room",
     longDescription:
-      "The Ngome House stands as a monument to understated luxury in the heart of the Serengeti. Built with local stone and timber, the lodge commands sweeping views of the endless plains. During migration season, witness millions of wildebeest and zebra from your private terrace. Our expert naturalists lead exclusive game drives, bush walks, and hot air balloon experiences. The lodge features an infinity pool that seems to merge with the savanna.",
+      "Set within the exclusive Kili Golf and Wildlife Estate in Usa River, Arusha, Amani Farmhouse is a charming countryside retreat that feels like a home away from home. The property blends rustic elegance with modern comfort, featuring spacious rooms with garden views, a swimming pool surrounded by tropical flora, and expansive lawns where wildlife roams freely. Ideal for families and couples seeking a serene getaway before or after safari, with championship golf right at the doorstep.",
+    rates: {
+      title: "Amani Farmhouse",
+      fullBoard: {
+        peak: { single: 1459, double: 972, triple: 2189, family: 972 },
+        high: { single: 1090, double: 727, triple: 1636, family: 727 },
+        low: { single: 788, double: 525, triple: 1182, family: 525 },
+      },
+      safariPackage: {
+        peak: { single: 1729, double: 1242, triple: 2797, family: 1242 },
+        high: { single: 1360, double: 997, triple: 2243, family: 997 },
+        low: { single: 1058, double: 795, triple: 1790, family: 795 },
+      },
+    },
   },
   {
-    slug: "golf-wildlife-cottages",
-    name: "Golf & Wildlife Cottages",
-    location: "Tarangire",
+    slug: "farmhouse-restaurant",
+    name: "Farmhouse Restaurant",
+    location: "Arusha",
+    type: "restaurant" as PropertyType,
     description:
-      "Witness dramatic elephant migrations in Tanzania's most underrated park. Baobab forests, seasonal wetlands, and intimate wildlife encounters.",
+      "Located within the Kili Golf and Wildlife Estate in Usa River, Arusha, a perfect retreat for families to relax, refresh, and enjoy serene surroundings.",
     image: propertyCottages,
+    linkText: "Book Table",
     longDescription:
-      "Tucked within Tarangire's iconic baobab woodland, our Golf & Wildlife Cottages offer front-row seats to one of Africa's greatest wildlife spectacles — the annual elephant migration. Each cottage is a private sanctuary with floor-to-ceiling windows, outdoor rain showers, and wrap-around decks. The property's championship golf course weaves through natural corridors where giraffes and zebras are frequent visitors. Evening game drives offer encounters with leopards, lions, and the park's famous tree-climbing pythons.",
+      "Farmhouse Restaurant is a culinary gem set within the beautiful Kili Golf and Wildlife Estate in Usa River, Arusha. Offering a menu that celebrates local Tanzanian flavors alongside international favorites, the restaurant provides a relaxed dining experience amidst stunning natural surroundings. Families can enjoy leisurely meals on the open terrace overlooking the estate's lush gardens, while children explore the safe, wildlife-friendly grounds. Perfect for pre-safari dining, celebrations, or a peaceful afternoon retreat.",
   },
   {
-    slug: "lobo-serengeti",
-    name: "Lobo Serengeti",
-    location: "Serengeti",
+    slug: "olduvai-museum-restaurant",
+    name: "Olduvai Museum Restaurant",
+    location: "Ngorongoro",
+    type: "restaurant" as PropertyType,
     description:
-      "Your exclusive retreat combining city convenience with personalized service that defines The Amani Collection experience.",
+      "Located within the Ngorongoro Conservation Area, Olduvai Museum Restaurant offers a relaxing dining stop surrounded by history and breathtaking landscapes.",
     image: propertyLobo,
+    linkText: "Book Table",
     longDescription:
-      "Perched atop a granite kopje in the northern Serengeti, Lobo offers perhaps the most dramatic setting of any lodge in East Africa. The open-air lounge frames the endless savanna like a living painting, while resident hyraxes scamper across the ancient rocks. Our suites are carved into the hillside, each with private balconies overlooking the migration routes. The property features a rock pool, observatory deck for stargazing, and a wine cellar with curated African vintages.",
+      "Positioned at the cradle of mankind within the Ngorongoro Conservation Area, Olduvai Museum Restaurant offers a unique dining experience where history meets culinary artistry. Adjacent to the world-famous Olduvai Gorge — where some of humanity's earliest fossils were discovered — the restaurant serves hearty Tanzanian cuisine and refreshments to safari travelers. The panoramic terrace offers breathtaking views across the ancient landscape, making it the perfect stop to refuel and reflect during your crater exploration.",
   },
   {
-    slug: "manyara-park",
-    name: "Manyara Park",
-    location: "Manyara",
+    slug: "amani-restaurant",
+    name: "Amani Restaurant",
+    location: "Arusha",
+    type: "restaurant" as PropertyType,
     description:
-      "Positioned at the cradle of mankind, witness archaeological wonders and experience one of Africa's most spectacular ecosystems.",
+      "Nestled within Mringa Coffee Estate, Amani Restaurant blends fine dining with the serene charm of Arusha's lush coffee fields.",
     image: propertyManyara,
+    linkText: "Book Table",
     longDescription:
-      "Lake Manyara Park lodge sits at the intersection of history and wilderness, where the Great Rift Valley wall plunges dramatically to the lake shore below. Our elevated tented suites are nestled among ancient mahogany and fig trees, offering views across the alkaline lake famous for its flamingo populations. The property serves as an ideal base for exploring the Ngorongoro Conservation Area, Olduvai Gorge, and the cultural villages of the Maasai and Hadzabe peoples.",
+      "Amani Restaurant is an elegant dining destination nestled within the Mringa Coffee Estate in Arusha. The restaurant offers a refined farm-to-table experience, sourcing fresh ingredients from the estate's own gardens and local producers. Diners enjoy a fusion of Tanzanian and international cuisine beneath the canopy of century-old trees, accompanied by the aroma of freshly roasted coffee. Whether for a romantic dinner, a family celebration, or a quiet afternoon coffee, Amani Restaurant delivers an unforgettable culinary journey.",
   },
 ];
+
+export const CHILD_POLICY = [
+  { rule: "Under 5yrs", rate: "FOC" },
+  { rule: "Per Child between 6 - 11yrs sharing with 2 adults", rate: "50% of the adult sharing rate" },
+  { rule: "Per Child between 6 - 15yrs sharing with 1 adult", rate: "Double room rate" },
+  { rule: "Per Child between 6 - 15yrs in own room", rate: "75% of the adult sharing rate" },
+];
+
+export const ACTIVITIES_EXTRAS = [
+  { activity: "Sundowner (min 02 guests) - on request & weather permitting", price: "US$ 70 per person" },
+  { activity: "Bush Breakfast (min 02 guests) - on request & weather permitting", price: "US$ 40 per person" },
+  { activity: "Lunch Box", price: "US$ 30 per person" },
+  { activity: "For Honeymooners: Bottle of Wine & Chocolates", price: "US$ 40" },
+];
+
+export const LOBO_ACTIVITIES = [
+  { activity: "Sundowner (min 02 guests) - on request & weather permitting", price: "US$ 100 per person" },
+  { activity: "Bush Breakfast (min 02 guests) - on request & weather permitting", price: "US$ 60 per person" },
+  { activity: "Lunch Box", price: "US$ 40 per person" },
+  { activity: "For Honeymooners: Bottle of Wine & Chocolates", price: "US$ 50" },
+];
+
+export const SEASON_DATES = {
+  peak: "01 July - 31 Oct\n20 Dec - 3 Jan",
+  high: "04 Jan - 31 March\n01 Jun - 30 Jun\n01 Nov - 19 Dec",
+  low: "01 Apr - 31 May",
+};
 
 const fadeIn = {
   hidden: { opacity: 0, y: 40 },
@@ -88,7 +155,7 @@ const PropertiesPreview = () => {
             Our Collection
           </p>
           <h2 className="font-heading text-4xl md:text-6xl font-light">
-            Lodges & Camps
+            Lodges, Camps & Restaurants
           </h2>
           <div className="separator-line" />
         </div>
@@ -115,7 +182,7 @@ const PropertiesPreview = () => {
                   />
                 </div>
                 <p className="font-body text-[10px] tracking-[0.35em] uppercase text-primary mb-2">
-                  {property.location}
+                  {property.location} · {property.type === "restaurant" ? "Restaurant" : "Lodge"}
                 </p>
                 <h3 className="font-heading text-2xl md:text-3xl font-light leading-tight mb-3 group-hover:text-primary transition-colors">
                   {property.name}
@@ -124,7 +191,7 @@ const PropertiesPreview = () => {
                   {property.description}
                 </p>
                 <span className="inline-block mt-4 font-body text-[10px] tracking-[0.25em] uppercase text-primary story-link">
-                  Discover More
+                  {property.linkText}
                 </span>
               </Link>
             </motion.div>

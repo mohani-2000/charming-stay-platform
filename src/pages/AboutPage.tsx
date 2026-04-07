@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { Compass, Utensils, Shield, Heart, TreePine, Binoculars, Wind, Camera } from "lucide-react";
+import { Binoculars, CalendarCheck, Bed, ShieldCheck } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -10,10 +10,10 @@ import propertyLobo from "@/assets/property-lobo.jpg";
 import propertyNgome from "@/assets/property-ngome.jpg";
 
 const VALUES = [
-  { icon: Compass, title: "Safari Adventures", text: "Expert-guided game drives across Tanzania's most iconic national parks and conservation areas." },
-  { icon: Utensils, title: "Fine Dining", text: "Farm-to-table cuisine blending local Tanzanian flavors with international culinary excellence." },
-  { icon: Shield, title: "Conservation", text: "Committed to preserving Tanzania's wildlife and supporting local communities through sustainable tourism." },
-  { icon: Heart, title: "Personalized Service", text: "Every detail curated to create unforgettable moments. Your journey, your way." },
+  { icon: Binoculars, title: "Expert Safari Guides", text: "Travel with highly experienced local guides who ensure safe journeys, deep wildlife knowledge, and unforgettable game-drive experiences." },
+  { icon: CalendarCheck, title: "Custom Travel Planning", text: "Every itinerary is thoughtfully designed to match your travel style, pace, and interests for a truly personalized African experience." },
+  { icon: Bed, title: "Luxury & Comfort Stays", text: "Handpicked lodges and camps offering comfort, stunning locations, and authentic African hospitality throughout your journey." },
+  { icon: ShieldCheck, title: "Safe & Responsible Travel", text: "We follow responsible tourism practices and prioritize guest safety while respecting wildlife, local communities, and natural environments." },
 ];
 
 const TEAM = [
@@ -61,8 +61,8 @@ const AboutPage = () => {
               <div className="separator-line !ml-0" />
               <p className="text-muted-foreground font-body text-sm leading-[2] mt-6 mb-6">
                 Founded with a deep love for Tanzania's extraordinary landscapes and cultures, Amani Collection
-                has grown from a single lodge into a portfolio of six remarkable properties spanning the country's
-                most breathtaking destinations.
+                has grown from a single lodge into a portfolio of remarkable properties spanning the country's
+                most breathtaking destinations — including lodges, camps, and restaurants.
               </p>
               <p className="text-muted-foreground font-body text-sm leading-[2]">
                 Our name — "Amani" — means peace in Swahili, reflecting our commitment to creating tranquil
@@ -83,8 +83,8 @@ const AboutPage = () => {
       <section className="py-20 md:py-28 bg-card">
         <div className="container mx-auto px-6 lg:px-12">
           <div className="text-center mb-16">
-            <p className="font-body text-[10px] tracking-[0.4em] uppercase text-primary mb-4">What We Stand For</p>
-            <h2 className="font-heading text-3xl md:text-5xl font-light">Our Values</h2>
+            <p className="font-body text-[10px] tracking-[0.4em] uppercase text-primary mb-4">Why Choose Us</p>
+            <h2 className="font-heading text-3xl md:text-5xl font-light">The Amani Difference</h2>
             <div className="separator-line" />
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -147,7 +147,7 @@ const AboutPage = () => {
             ].map((s) => (
               <div key={s.label}>
                 <p className="font-heading text-5xl md:text-6xl text-gold-light mb-2">{s.num}</p>
-                <p className="font-body text-[10px] tracking-[0.3em] uppercase text-dark-section-foreground/70">{s.label}</p>
+                <p className="font-body text-[10px] tracking-[0.3em] uppercase text-white/70">{s.label}</p>
               </div>
             ))}
           </div>

@@ -26,47 +26,50 @@ const Index = () => (
     {/* Parallax divider 1 */}
     <ParallaxDivider image={heroMain} alt="Tanzania landscape" />
 
-    {/* Content row: Image left + text right */}
+    {/* Content row: Amani Safari Lodge */}
     <ContentImageRow
       image={propertySilale}
-      alt="The Silale Tarangire Park"
-      subtitle="Tarangire"
-      title="The Silale Tarangire Park"
-      description="Perched on the Great Rift Valley escarpment, enjoy breathtaking lake views and diverse ecosystems from forest to flamingo-filled shores, all within intimate proximity to Tanzania's most iconic wildlife."
-      linkTo="/properties/silale-tarangire"
+      alt="Amani Safari Lodge"
+      subtitle="Arusha"
+      title="Amani Safari Lodge"
+      description="Peaceful, green, and close to all major parks in northern Tanzania. Nestled within Mringa Coffee Estate, Arusha — your perfect base for exploring the northern safari circuit."
+      linkTo="/properties/amani-safari-lodge"
+      linkText="Inquiry Room"
     />
 
     {/* Parallax divider 2 */}
     <ParallaxDivider image={propertyLobo} alt="Serengeti sunset" />
 
-    {/* Content row: reversed — text left + image right */}
+    {/* Content row: Amani Eserian Ngorongoro */}
     <ContentImageRow
-      image={propertyNgome}
-      alt="The Ngome House"
-      subtitle="Serengeti"
-      title="The Ngome House"
-      description="Immerse yourself in the world's most famous wildlife ecosystem. Year-round game viewing and front-row access to the Great Migration from the heart of the Serengeti plains."
-      linkTo="/properties/ngome-house"
+      image={propertyOlduvai}
+      alt="Amani Eserian Ngorongoro"
+      subtitle="Ngorongoro"
+      title="Amani Eserian Ngorongoro"
+      description="A calm, scenic stay in the Ngorongoro Conservation Area with views you'll never forget. Perched on the crater rim with sweeping views of Africa's Eden."
+      linkTo="/properties/amani-eserian-ngorongoro"
+      linkText="Inquiry Room"
       reversed
     />
 
     {/* Parallax divider 3 */}
     <ParallaxDivider image={propertyOlduvai} alt="Ngorongoro highlands" />
 
-    {/* About section */}
+    {/* About / Why Choose Us section */}
     <AboutPreview />
 
     {/* Parallax divider 4 */}
     <ParallaxDivider image={propertyManyara} alt="Manyara lakeside" />
 
-    {/* Content row: Image left + text right */}
+    {/* Content row: Amani Farmhouse */}
     <ContentImageRow
-      image={propertyCottages}
-      alt="Golf & Wildlife Cottages"
-      subtitle="Tarangire"
-      title="Golf & Wildlife Cottages"
-      description="Witness dramatic elephant migrations in Tanzania's most underrated park. Baobab forests, seasonal wetlands, and intimate wildlife encounters paired with championship golf."
-      linkTo="/properties/golf-wildlife-cottages"
+      image={propertyNgome}
+      alt="Amani Farmhouse"
+      subtitle="Arusha"
+      title="Amani Farmhouse"
+      description="A quiet home in the countryside where you can relax and feel cared for. Located in the Kili Golf and Wildlife Estate, Arusha — perfect for families and couples."
+      linkTo="/properties/amani-farmhouse"
+      linkText="Inquiry Room"
     />
 
     {/* Testimonial parallax section */}
