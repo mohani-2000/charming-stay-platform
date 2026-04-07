@@ -12,7 +12,7 @@ const ContactPage = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const msg = `Hello Amani Collection!\n\nName: ${form.name}\nEmail: ${form.email}\nPhone: ${form.phone}\nSubject: ${form.subject}\n\n${form.message}`;
-    window.open(`https://wa.me/255123456789?text=${encodeURIComponent(msg)}`, "_blank");
+    window.open(`https://wa.me/255742136679?text=${encodeURIComponent(msg)}`, "_blank");
   };
 
   return (
@@ -91,7 +91,7 @@ const ContactPage = () => {
                       value={form.phone}
                       onChange={(e) => setForm({ ...form, phone: e.target.value })}
                       className="w-full bg-card text-foreground px-4 py-3 text-sm font-body border border-border outline-none focus:border-primary transition-colors"
-                      placeholder="+255 123 456 789"
+                      placeholder="+255 742 136 679"
                     />
                   </div>
                   <div>
@@ -104,9 +104,10 @@ const ContactPage = () => {
                       className="w-full bg-card text-foreground px-4 py-3 text-sm font-body border border-border outline-none focus:border-primary transition-colors appearance-none cursor-pointer"
                     >
                       <option value="">Select a subject</option>
-                      <option value="Booking Enquiry">Booking Enquiry</option>
+                      <option value="Room Inquiry">Room Inquiry</option>
+                      <option value="Table Reservation">Table Reservation</option>
+                      <option value="Safari Package">Safari Package</option>
                       <option value="Group Booking">Group Booking</option>
-                      <option value="Experiences">Experiences</option>
                       <option value="Partnership">Partnership</option>
                       <option value="Other">Other</option>
                     </select>
@@ -151,8 +152,8 @@ const ContactPage = () => {
                       <Phone className="w-5 h-5 text-primary" />
                     </div>
                     <div>
-                      <p className="font-body text-[10px] tracking-[0.2em] uppercase text-muted-foreground mb-1">Phone</p>
-                      <p className="font-body text-sm">+255 123 456 789</p>
+                      <p className="font-body text-[10px] tracking-[0.2em] uppercase text-muted-foreground mb-1">Mobile</p>
+                      <p className="font-body text-sm">+255 742 136 679</p>
                     </div>
                   </li>
                   <li className="flex items-start gap-4">
@@ -162,6 +163,7 @@ const ContactPage = () => {
                     <div>
                       <p className="font-body text-[10px] tracking-[0.2em] uppercase text-muted-foreground mb-1">Email</p>
                       <p className="font-body text-sm">info@amanisafarilodge.co.tz</p>
+                      <p className="font-body text-sm">reservations@amanisafarilodge.co.tz</p>
                     </div>
                   </li>
                   <li className="flex items-start gap-4">
@@ -170,7 +172,7 @@ const ContactPage = () => {
                     </div>
                     <div>
                       <p className="font-body text-[10px] tracking-[0.2em] uppercase text-muted-foreground mb-1">Address</p>
-                      <p className="font-body text-sm">Arusha, Tanzania</p>
+                      <p className="font-body text-sm">Old Dodoma Road, Mringa Area,<br />Arusha, Tanzania</p>
                     </div>
                   </li>
                   <li className="flex items-start gap-4">
@@ -180,7 +182,7 @@ const ContactPage = () => {
                     <div>
                       <p className="font-body text-[10px] tracking-[0.2em] uppercase text-muted-foreground mb-1">WhatsApp</p>
                       <a
-                        href="https://wa.me/255123456789"
+                        href="https://wa.me/255742136679"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="font-body text-sm text-primary hover:underline"
@@ -197,7 +199,8 @@ const ContactPage = () => {
                 <MapPin className="w-8 h-8 text-primary mx-auto mb-4" />
                 <h4 className="font-heading text-xl mb-2">Visit Our Office</h4>
                 <p className="text-muted-foreground font-body text-xs leading-relaxed">
-                  Our head office is located in Arusha, the gateway to Tanzania's Northern Safari Circuit.
+                  Old Dodoma Road, Mringa Area, Arusha, Tanzania.<br />
+                  Our head office is the gateway to Tanzania's Northern Safari Circuit.
                   We welcome visitors by appointment.
                 </p>
               </div>

@@ -4,7 +4,6 @@ import { CalendarDays, Users, MapPin } from "lucide-react";
 const LOCATIONS = [
   "All Locations",
   "Arusha",
-  "Tarangire",
   "Ngorongoro",
   "Serengeti",
   "Zanzibar",
@@ -17,7 +16,7 @@ const BookingBar = () => {
   const [guests, setGuests] = useState("2");
 
   const handleBook = () => {
-    const phone = "255123456789";
+    const phone = "255742136679";
     const message = `Hello Amani Collection! I'd like to book:\n📍 ${location}\n📅 Check-in: ${checkIn || "TBD"}\n📅 Check-out: ${checkOut || "TBD"}\n👥 Guests: ${guests}`;
     window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`, "_blank");
   };
