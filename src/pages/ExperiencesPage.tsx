@@ -80,7 +80,7 @@ const ExperienceCard = ({ exp, index }: { exp: typeof EXPERIENCES[0]; index: num
         <div className="separator-line !ml-0" />
         <p className="text-muted-foreground font-body text-sm leading-[1.9]">{exp.description}</p>
         <a
-          href={`https://wa.me/255123456789?text=${encodeURIComponent(`Hello! I'm interested in the ${exp.title} experience.`)}`}
+          href={`https://wa.me/255742136679?text=${encodeURIComponent(`Hello! I'm interested in the ${exp.title} experience.`)}`}
           target="_blank"
           rel="noopener noreferrer"
           className="inline-block font-body text-[10px] tracking-[0.25em] uppercase border border-primary text-primary px-8 py-3 hover:bg-primary hover:text-primary-foreground transition-all duration-300"

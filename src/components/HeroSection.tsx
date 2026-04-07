@@ -13,13 +13,13 @@ const SLIDES = [
   },
   {
     image: propertySilale,
-    subtitle: "Tarangire · Ngorongoro · Serengeti",
+    subtitle: "Arusha · Ngorongoro · Serengeti · Zanzibar",
     title: "Where wilderness\nmeets elegance.",
   },
   {
     image: propertyNgome,
-    subtitle: "Unforgettable Experiences",
-    title: "The journey of\na lifetime awaits.",
+    subtitle: "Luxury Safari Accommodation",
+    title: "Experience comfort,\nnature & wilderness.",
   },
 ];
 
